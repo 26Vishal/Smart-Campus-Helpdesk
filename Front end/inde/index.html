@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Campus Helpdesk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎓 Smart Campus Helpdesk</h1>
+
+    <!-- Login Section -->
+    <div id="login-section" class="card">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()" class="btn-primary">Login</button>
+        <p id="login-message"></p>
+    </div>
+
+    <!-- Ticket Section -->
+    <div id="ticket-section" style="display:none;">
+
+        <div class="top-bar">
+            <h2>Dashboard</h2>
+            <button onclick="logout()" class="btn-danger">Logout</button>
+        </div>
+
+        <div class="card">
+            <h3>Create Ticket</h3>
+
+            <input type="text" id="title" placeholder="Title">
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <div class="row">
+                <select id="category">
+                    <option value="classroom">Classroom</option>
+                    <option value="hostel">Hostel</option>
+                    <option value="network">Network</option>
+                </select>
+
+                <select id="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <button onclick="createTicket()" class="btn-primary">Create Ticket</button>
+        </div>
+
+        <div class="card">
+            <h3>All Tickets</h3>
+            <div id="ticket-list" class="ticket-grid"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
